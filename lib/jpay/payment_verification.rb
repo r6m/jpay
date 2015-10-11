@@ -15,7 +15,7 @@ module Jpay
     def initialize(args = {})
       @authority = args.fetch(:authority)
       @amount    = args.fetch(:amount)
-      @client  ||= Savon.client(wsdl: Zarinpal.configuration.client, pretty_print_xml: true)
+      @client  ||= Savon.client(wsdl: Jpay.configuration.client, pretty_print_xml: true)
       @response  = Response.new
     end
 
@@ -24,7 +24,7 @@ module Jpay
     # @return [Jpay::Response]
     def verify
       response = @client.call :verification, message: {
-        'api' => Jpay.configuration.jpay_api,
+        'api' => Jpay.configuration.api,
         'amount' => @amount,
         'authority' => @authority,
       }

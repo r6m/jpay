@@ -1,6 +1,6 @@
 module Jpay
   class Response
-    class ResponseError << RuntimeError; end
+    class ResponseError < RuntimeError; end
     attr_reader :response, :invoice, :status
 
     # Checks if the transaction response returned from PaymentRequest
@@ -26,7 +26,7 @@ module Jpay
 
     private
     def perform_validation
-      raise ArgumentError, 'Not a valid response' if @response.nil?
+      raise ArgumentError, 'not a valid response' if @response.nil?
 
       body    = @response[:requestpayment_response] || @response[:verification_response]
       @status = body[:return].to_i
