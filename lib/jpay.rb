@@ -1,4 +1,8 @@
 require "jpay/version"
+require 'jpay/payment_request'
+require 'jpay/response'
+require 'jpay/payment_verification'
+require 'jpay/errors'
 
 module Jpay
   class << self
@@ -13,10 +17,10 @@ module Jpay
   # Configures the gem
   #
   # @example
-  #   Zarinpal.configure do |config|
+  #   Jpay.configure do |config|
   #     config.merchant_id  = 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX'
   #     config.callback_url = 'http://example.com/call_back'
-  #     config.client       = 'https://de.zarinpal.com/pg/services/WebGate/wsdl'
+  #     config.client       = 'http://www.jahanpay.com/webservice?wsdl'
   #   end
   class Configuration
     attr_accessor :api, :callback_url, :client
