@@ -1,7 +1,10 @@
-# Jpay - JahanPay payment gateway gem for rails
+# Jpay
 
-the Jpay gem provides Ruby APIs for proccessing payments, transactions and verifications using JahanPay's Merchant APIs. For more information please visit
-http://jahanpay.com
+### JahanPay payment gateway gem for rails
+
+the Jpay gem provides Ruby APIs for proccessing payments, transactions and verifications using JahanPay's Merchant APIs. For more information please visit [JahanPay](http://jahanpay.com) website/
+
+##### NOTE: [Jpay](https://github.com/rezam90/jpay) is highly inspired by [Zarinpal](https://github.com/arashm/zarinpal) gem
 
 ## Installation
 
@@ -22,7 +25,6 @@ Or install it yourself as:
 ```sh
 $ gem install jpay
 ```
-## For Rails application:
 
 ## Configuration
 
@@ -41,7 +43,7 @@ Jpay.configure do |config|
 end
 ```
 
-## Rails Example
+## Example
 
 Payment Request:
 
@@ -86,14 +88,22 @@ class PurchaseController < ApplicationController
 
     response = verification.verify
 
-    response.status # return 1 for successful transaction and error number for unsuccessful transaction
-
-    response.message # returns status message
-
-    response.valid? # returns 'true' if transaction is successful
+    response.status   # return 1 for successful transaction, error number for unsuccessful one
+    response.message  # returns status message
+    response.valid?   # returns 'true' for successful transaction
   end
 
 end
 ```
+
+## Contributing
+
+1. Fork it ( http://github.com/rezam90/jpay/fork )
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request
+
+
 ##Copyright
 Copyright © 2015 Reza Morsali.
