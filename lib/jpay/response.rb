@@ -1,7 +1,7 @@
 module Jpay
   class Response
     class ResponseError < RuntimeError; end
-    attr_reader :response, :invoice, :status
+    attr_reader :response, :invoice, :status, :url, :message
 
     # Checks if the transaction response returned from PaymentRequest
     # or PaymentVerification is valid
@@ -30,15 +30,19 @@ module Jpay
 
       body    = @response[:requestpayment_response] || @response[:verification_response]
       @status = body[:return].to_i
+      @message = Errors::IDS[body[:return]]
 
       if body[:return].to_i < 0
         @valid = false
-        raise ResponseError, Errors::IDS[body[:return]]
+        # raise ResponseError, Errors::IDS[body[:return]]
       elsif body[:return].to_i == 1
         @valid = true
+        @message = "Successful transaction"
       else
         @valid = true
         @invoice = body[:return]
+        @url = "http://www.jahanpay.com/pay_invoice/#{@invoice}"
+        @message = 'got invoice url'
       end
     end
   end

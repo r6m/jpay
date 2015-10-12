@@ -17,19 +17,19 @@ module Jpay
     # @option args [string] :text payment description
 
     def initialize(args = {})
-      @amount   = args.fetch(:amount)
-      @callback_url = args.fetch(:callback_url)
-      @order_id = args.fetch(:order_id)
-      @text     = args.fetch(:text)
+      @amount   = args[:amount]
+      @callback_url = args[:callback_url] || Jpay.configuration.callback_url
+      @order_id = args[:order_id]
+      @text     = args[:text]
       @client ||= Savon.client(wsdl: Jpay.configuration.client, pretty_print_xml: true)
       @response = Response.new
     end
 
-    def call
-      response = @client.call :payment_request, message: {
-        'api'      => Jpay.configuration.japy_api,
+    def pay
+      response = @client.call :requestpayment, message: {
+        'api'      => Jpay.configuration.api,
         'amount'   => @amount,
-        'callback' => Jpay.configuration.callback_url,
+        'callback' => @callback_url,
         'orderid'  => @order_id,
         'txt'      => @text
       }

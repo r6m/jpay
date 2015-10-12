@@ -18,7 +18,7 @@ module Jpay
   #
   # @example
   #   Jpay.configure do |config|
-  #     config.merchant_id  = 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX'
+  #     config.merchant_id  = 'XXXXXXXX'
   #     config.callback_url = 'http://example.com/call_back'
   #     config.client       = 'http://www.jahanpay.com/webservice?wsdl'
   #   end
@@ -26,7 +26,9 @@ module Jpay
     attr_accessor :api, :callback_url, :client
 
     def initialize
+      @api = 'randome-api-xyz'
       @client = 'http://www.jahanpay.com/webservice?wsdl'
+      @callback_url = 'localhost:3000/verify'
     end
 
   end
