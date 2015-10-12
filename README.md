@@ -29,9 +29,6 @@ For Rails application:
 ```sh
 rails g jpay:install
 ```
-Edit :
-
-## Rails Example
 
 Configure 'config/initializers/jpay.rb':
 
@@ -43,6 +40,8 @@ Jpay.configure do |config|
 
 end
 ```
+
+## Rails Example
 
 Payment Request:
 
