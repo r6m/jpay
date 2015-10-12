@@ -2,7 +2,7 @@
 
 ### JahanPay payment gateway gem for rails
 
-the Jpay gem provides Ruby APIs for proccessing payments, transactions and verifications using JahanPay's Merchant APIs. For more information please visit [JahanPay](http://jahanpay.com) website/
+the Jpay gem provides Ruby APIs for proccessing payments, transactions and verifications using JahanPay's Merchant APIs. For more information please visit [JahanPay](http://jahanpay.com) website
 
 ##### NOTE: [Jpay](https://github.com/rezam90/jpay) is highly inspired by [Zarinpal](https://github.com/arashm/zarinpal) gem
 
