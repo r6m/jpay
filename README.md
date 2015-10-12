@@ -22,7 +22,7 @@ Or install it yourself as:
 ```sh
 $ gem install jpay
 ```
-For Rails application:
+## For Rails application:
 
 ## Configuration
 
