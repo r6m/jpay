@@ -95,5 +95,5 @@ class PurchaseController < ApplicationController
 
 end
 ```
-==Copyright
-Copyright © 2011 Carl Hicks. See LICENSE for details.
+##Copyright
+Copyright © 2015 Reza Morsali.
