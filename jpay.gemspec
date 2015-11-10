@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Jpay::VERSION
   spec.authors       = ["Reza Morsali"]
   spec.email         = ["light.reza@gmail.com"]
-  spec.summary       = %q{JahanPay payment gem}
-  spec.description   = %q{JahanPay payment gem}
+  spec.summary       = %q{JahanPay payment gateway gem for rails}
+  spec.description   = %q{the Jpay gem provides Ruby APIs for proccessing payments, transactions and verifications using JahanPay's Merchant APIs. For more information please visit JahanPay website}
   spec.homepage      = "https://github.com/rezam90/jpay"
   spec.license       = "MIT"
   # spec.required_ruby_version = '~> 2.0.0'
