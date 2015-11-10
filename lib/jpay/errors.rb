@@ -1,19 +1,20 @@
+# encoding: utf-8
 module Jpay
   module Errors
     IDS = {
-      '-32' => 'Amount does not match',
-      '-31' => 'Unsuccessful transaction',
-      '-30' => 'Invalid transaction',
-      '-29' => 'CallBack was not specified',
-      '-27' => 'your IP is blocked',
-      '-26' => 'Gateway is deactivated',
-      '-24' => 'Invalid amount',
-      '-23' => 'Too much amount',
-      '-22' => 'Amount should be greater than 100 Toman',
-      '-21' => 'Invalid IP for this Gateway',
-      '-20' => 'Invalid API',
-      '-6'  => 'Bank connection error',
-      '-9'  => 'System error',
+      '-32' => 'مبلغ وارد شده مطابقت ندارد',
+      '-31' => 'پرداخت ناموفق',
+      '-30' => 'پرداخت نامعتبر',
+      '-29' => 'لینک بازگشت تعیین نشده است',
+      '-27' => 'IP شما مسدود شده است',
+      '-26' => 'درگاه غیر فعال شده است',
+      '-24' => 'مبلغ نامعتبر است',
+      '-23' => 'مبلغ زیاد است',
+      '-22' => 'مبلغ باید بیشتر از 100 تومان باشد',
+      '-21' => 'IP برای درگاه نامعتبر است',
+      '-20' => 'API نامعتبر است',
+      '-6'  => 'خطای ارتباط با بانک',
+      '-9'  => 'خطای سیستمی',
     }
   end
 end

@@ -17,6 +17,7 @@ module Jpay
     # @option args [string] :text payment description
 
     def initialize(args = {})
+      @api = args[:api] || Jpay.configuration.api
       @amount   = args[:amount]
       @callback_url = args[:callback_url] || Jpay.configuration.callback_url
       @order_id = args[:order_id]
@@ -27,7 +28,7 @@ module Jpay
 
     def pay
       response = @client.call :requestpayment, message: {
-        'api'      => Jpay.configuration.api,
+        'api'      => @api,
         'amount'   => @amount,
         'callback' => @callback_url,
         'orderid'  => @order_id,

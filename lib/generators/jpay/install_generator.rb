@@ -8,7 +8,7 @@ module Jpay
 
       def copy_initializer
         template "jpay_initializer.rb", "config/initializers/jpay.rb"
-        # puts "add your Jahanpay 'api' to config/initializers/jpay.rb"
+        puts "please config your gateway at: config/initializers/jpay.rb"
         # puts "add 'callback_url' to config/initializers/jpay.rb"
         puts "Install complete!"
 
