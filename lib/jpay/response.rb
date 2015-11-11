@@ -1,3 +1,4 @@
+# encoding: utf-8
 module Jpay
   class Response
     class ResponseError < RuntimeError; end
@@ -37,7 +38,7 @@ module Jpay
         # raise ResponseError, Errors::IDS[body[:return]]
       elsif body[:return].to_i == 1
         @valid = true
-        @message = "Successful transaction"
+        @message = "پرداخت با موفقیت انجام شد"
       else
         @valid = true
         @invoice = body[:return]
