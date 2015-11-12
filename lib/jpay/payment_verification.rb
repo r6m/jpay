@@ -13,7 +13,7 @@ module Jpay
     # @option args [String] :authority Authority code returned by verify url params
     # @option args [Integer] :amount price of the request
     def initialize(args = {})
-      @api = args.fetch(:api) || Jpay.configuration.api
+      @api = args[:api] || Jpay.configuration.api
       @authority = args.fetch(:authority)
       @amount    = args.fetch(:amount)
       @client  ||= Savon.client(wsdl: Jpay.configuration.client, pretty_print_xml: true)
